@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dgital clock</title>
+    <style>
+        .clock-{
+            
+        }
+        .time_data{
+            background-color: orange;
+            padding: 30px;
+            text-align: center;
+        }
+    </style>
+</head>
+<body>
+
+    <form> 
+        <h1 id="heading">hi this my name</h1>
+        <input type="text" name="name" id="ipnt">
+        <input type="submit" id="submit">
+    </form>
+
+
+    <script>
+        let flag=true
+        let inputhead=document.querySelector('#heading')
+        let inputdata=document.querySelector('#ipnt')
+        console.log(inputdata);
+        let subt=document.querySelector('#submit')
+
+
+        subt.addEventListener("click",function(e){
+         e.preventDefault();
+
+         if(flag){
+        let passval=parseInt(inputhead.value);
+        console.log(passval);
+        passdata(passval)
+         }
+         else{
+            alert("game is not allow right now")
+         }
+        })
+
+
+        function passdata(getdata){
+        if(isNaN(getdata)){
+            alert("pls put any data")
+           
+        }
+        else{
+            console.log(getdata);
+        }
+        }
+    </script>
+   
+    <!-- <h1>digital clock</h1>
+
+    <div class="clock-div">
+        <h1>your current time</h1>
+        <div class="time_data" id="clock"></div>
+    </div>
+    <script>
+       const clock=document.getElementById("clock");
+        // document.querySelector('#clock');
+
+       
+
+        setInterval(function(){
+            let date=new Date();
+        // console.log(date.toLocaleTimeString());
+        clock.innerHTML=date.toLocaleTimeString()
+
+        },1000) -->
+    <!-- </script> -->
+</body>
+</html>

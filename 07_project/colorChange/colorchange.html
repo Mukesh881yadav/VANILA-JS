@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .parent-box{
+         display: flex;
+        }
+        .clbox{
+            height: 100px;
+            width: 100px;
+            margin: 0px 10px;
+        }
+        #red{
+           background-color: red;
+        }
+        #green{
+           background-color:green;
+        }
+        #yellow{
+           background-color: yellow;
+        }
+        #blue{
+           background-color:blue;
+        }
+    </style>
+</head>
+<body>
+    <nav> <h1><a href="/" class="cuurett_page">Home</a></h1></nav>
+   <h1> click on any Color Change of background</h1>
+   
+ <div class="parent-box">
+    <div class="clbox" id="red"></div>
+    <div class="clbox"  id="green"></div>
+    <div class="clbox" id="yellow"></div>
+    <div class="clbox"  id="blue"></div>
+ </div>
+
+
+</body>
+<script>
+    let collectionofButton=document.querySelectorAll(".clbox");
+    // console.log(collectionofButton);
+    const body=document.querySelector("body");
+
+    collectionofButton.forEach((ele)=>{
+      ele.addEventListener("click",function(e){
+        //  body.style="background-color:green"
+        console.log(e);
+        console.log(e.target.id);
+        if(e.target.id=="red"){
+            body.style.backgroundColor=e.target.id
+        }
+        else if(e.target.id=="green"){
+            body.style.backgroundColor=e.target.id
+        }
+        else if(e.target.id=="yellow"){
+            body.style.backgroundColor=e.target.id
+        }
+        else{
+            body.style.backgroundColor="blue"
+        }
+      
+      })
+  
+    
+    })
+
+    // function clchange(event){
+    //    event.target=
+    // }
+
+</script>
+</html>

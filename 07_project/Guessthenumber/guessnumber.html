@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Guess the number</title>
+</head>
+<body>
+    <div id="wraper">
+        <h1>Number Guessing game</h1>
+        <p>try and guess a random nunmber between 1 and 100</p>
+        <p>you have 10 attempts o guess the right number</p>
+        <br>
+        <form class="form">
+            <label for="guessfield" id="guess">Guess a number</label>
+        <input type="text" id="guessField" class="guessFiled">
+        <input type="submit" id="subt" value="submit guess">
+        </form>
+
+        <div class="resultParas">
+            <p>Previous Guess: <span class="guesses"></span></p>
+            <p>remaining Guess: <span class="lastResutl">10</span></p>
+            <p class="lowOrHi"></p>
+        </div>
+    </div>
+    <script>
+       let randomNumner=parseInt(Math.random()*100+1);
+       const submit=document.querySelector("#subt");
+       const userInput=document.querySelector("#guessField");
+       const guessSlot=document.querySelector(".guesses");
+       const remaining=document.querySelector(".lastResutl");
+       const lowOrHi=document.querySelector(".lowOrHi");
+       let startdata=document.querySelector('.resultParas');
+
+
+       const p=document.createElement('p')
+
+       let prevGuess=[];
+       let numGuess=0;
+
+       let playGame=true;
+
+
+       if(playGame){
+        submit.addEventListener("click", function(e){
+          e.preventDefault();
+          const guess=parseInt(userInput.value);
+
+          validateGuess(guess)
+        })
+       }
+
+       function validateGuess(guess){
+         if(isNaN(guess)){
+            alert("pls enter a valid number")
+         }
+         else if(guess<1){
+            alert("pls enter a more then 1")
+         }
+         else if(guess>100){
+            alert("pls enter a less then 100")
+       }
+       else{
+        prevGuess.push(guess);
+        if(numGuess>10){
+          displayguess(guess)
+          displaymessage(`game over randome number was ${randomNumner}`)
+          endGame()
+        }
+        else{
+            displayguess(guess);
+            checkGuess(guess)
+
+        }
+       }
+    }
+
+       function checkGuess(guess){
+   
+          if(guess===randomNumner){
+              displaymessage("you guested right");
+              console.log("chek guesz");
+              endGame();
+          }
+          else if(guess<randomNumner){
+            displaymessage('Number is too low')
+            console.log("chek two low");
+          }
+          else if(guess>randomNumner){
+            displaymessage('Number is too high')
+          }
+       }
+
+       function displayguess(guess){
+        // console.log("display gues");
+          userInput.value='';
+          console.log(guess +"displayguess");
+          guessSlot.innerHTML+=`${guess} ,`;
+         
+          numGuess++;
+          console.log(numGuess);
+          remaining.innerHTML= `${10-numGuess}`
+          
+       }
+
+       function displaymessage(message){
+        // console.log("display mss");
+        lowOrHi.innerHTML=`${message}`
+       }
+
+
+       function endGame(){
+        console.log("end game");
+       userInput.value='';
+       console.log(p);
+       userInput.setAttribute("disabled", '')
+       p.classList.add("button")
+       p.innerHTML=`<h1 id="newgame">Start New game</h1>`;
+       console.log(startdata);
+        startdata.appendChild(p)
+       playGame=false;
+       newGame()    
+       }
+
+
+       function newGame(){
+  
+console.log("new game");
+    const newgamebutton=document.querySelector('#newgame') ;
+    console.log(newgamebutton);
+    newgamebutton.addEventListener('click',function(){
+      
+        // randomNumner=parseInt(Math.random()*100+1);
+        prevGuess=[];
+        numGuess=1;
+        guessSlot.innerHTML='';
+        remaining.innerHTML=`${11-numGuess}`;
+        userInput.removeAttribute('disabled');
+        startdata.removeChild(p);
+        playGame=true;
+    })
+  }   
+    </script>
+</body>
+</html>

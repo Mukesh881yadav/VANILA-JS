@@ -21,7 +21,8 @@ function loginUser(useName="sam"){
 //     return num1,val1
 // }
 
-console.log(calculateCartPrice(200, 400, 500, 2000))const user = {
+console.log(calculateCartPrice(200, 400, 500, 2000))
+ const user = {
     username: "hitesh",
     prices: 199
 }
