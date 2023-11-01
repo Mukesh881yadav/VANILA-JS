@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <button id="start">start</button>
+    <button id="stop">stop</button>
+
+
+    <script>
+
+const randomColor = function () {
+  const hex = '0123456789ABCDEF';
+  let color = '#';
+  for (let i = 0; i < 6; i++) {
+    color += hex[Math.floor(Math.random() * 16)];
+    console.log(color);
+
+  }
+  return color;
+};
+console.log(randomColor());
+
+
+    let changecolor=function(){
+        function randomm(number){
+            
+            return Math.floor(Math.random()*number)
+        }
+        console.log("hi");
+        rndcolor=`rgb(${randomm(255)},${randomm(255)},${randomm(255)})`;
+        document.body.style.backgroundColor = rndcolor;
+    } 
+
+        document.querySelector("#start").addEventListener("click",function(){
+    setInterval(changecolor,2000)
+        })
+    </script>
+</body>
+</html>

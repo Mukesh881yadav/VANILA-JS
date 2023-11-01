@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <button id="btn">click here</button>
+    <input type="text" id="inputfield">
+    <p>
+        Focus this iframe and press any key to get the current timestamp for the
+        keypress event.
+      </p>
+      <p>timeStamp: <span id="time">-</span></p>
+    <script>
+
+//             function randomm(numbr){
+//                 return Math.floor(Math.random()* (numbr+1))
+//             }
+//     document.querySelector('#btn').addEventListener("focus  ",function(){
+//         const rndcolor=`rgb(${randomm(255)},${randomm(255)},${randomm(255)})`;
+//         console.log(rndcolor);
+//         document.body.style.backgroundColor = rndcolor;
+//     })
+
+
+//    document.querySelector("#inputfield").addEventListener('keypress',(event) => {
+//   if (event.key === 'Enter' && event.ctrlKey) {
+//     console.log('Ctrl + Enter pressed');
+//   }
+// });
+
+function getTime(event) {
+  const time = document.getElementById("time");
+  time.firstChild.nodeValue = event.timeStamp;
+}
+document.body.addEventListener("keypress", getTime);
+
+    </script>
+</body>
+</html>

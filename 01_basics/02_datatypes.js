@@ -15,7 +15,7 @@ let isLoggedIn = false
 let state;
 //  primitive type
 // number => 2 to power 53
-// bigint
+// bigint  perform operations on large integers without losing precision
 // string => ""
 // boolean => true/false
 // null => standalone value null means we assign value empty 

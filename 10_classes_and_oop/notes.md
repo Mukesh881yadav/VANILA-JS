@@ -1,0 +1,1 @@
+important point : javascript is primarly prototype-based language.classes are syntactic sugar some people coming from C and c++ java background language.

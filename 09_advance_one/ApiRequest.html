@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>API request</title>
+</head>
+<style>
+    button{
+        padding: 20px;
+        background-color: red;
+        color: #fff;
+        border: 1px solid red;
+    }
+    h1{
+        font-size: 30px;
+        color: #fff;
+    }
+</style>
+<!-- API links -->
+<!-- Application programming interface -->
+<!-- https://randomuser.me/ -->
+<!-- json formatter -->
+<body style="background-color: #212121;">
+0   UNSENT	Client has been created. open() not called yet.
+1	OPENED	open() has been called.
+2	HEADERS_RECEIVED	send() has been called, and headers and status are available.
+3	LOADING	Downloading; responseText holds partial data.
+4	DONE	The operation is complete.
+
+<button id="btn">click here</button>
+
+<button id="reset">reset</button>
+
+<h1 class="subsciber"></h1>
+<img src="" alt="" class="imgdata">
+</body>
+<script>
+const reset=document.querySelector(".reset")
+const sub=document.querySelector(".subsciber")
+const img=document.querySelector(".imgdata") 
+const myclick =document.querySelector("#btn").addEventListener("click",function(){
+    const requestUrl='https://api.github.com/users/hiteshchoudhary'
+    const xhr=new XMLHttpRequest();
+    xhr.open('Get', requestUrl)
+    xhr.onreadystatechange=function(){
+        if(xhr.readyState === 4){
+            const data=JSON.parse(this.responseText)
+            console.log(data);
+            // first we get data in string then we have to convert into objetx json
+       const follow=data.followers
+            sub.innerHTML=follow
+      const imgdata=data.avatar_url
+      console.log(img);
+       img.setAttribute('src',imgdata)
+        }
+    }
+    console.log("here");
+    xhr.send()
+})
+const resetdata=document.querySelector('#reset').addEventListener("click",function(){
+    sub.innerHTML="";
+    img.setAttribute('src',"")
+})
+</script>
+</html>

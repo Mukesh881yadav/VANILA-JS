@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body{
+            background-color: #414141;
+        }
+    </style>
+</head>
+<body>
+    <h2>amazing images</h2>
+    <div>
+        <ul id="images">
+            <li><img src="https://media.istockphoto.com/id/503227300/photo/strong-lion.webp?b=1&s=170667a&w=0&k=20&c=ex4XFbb_wneSadkvoCEYi0CnY58cSZBoEYaodHCDhoE=" alt="" id="firstlion"></li>
+            <li><img src="https://media.istockphoto.com/id/533297303/photo/lion-mother-with-cub.webp?b=1&s=170667a&w=0&k=20&c=-ZNNodIyHlNrgLxvLV4d6HYsqKaSM6OzpY5ATLv-Kw8=" id="flion" alt=""></li>
+            <li><img src="https://media.istockphoto.com/id/1354939778/photo/close-up-of-a-roaring-lion.webp?b=1&s=170667a&w=0&k=20&c=PjMIACJvvlHXsqOEbF9nVwP5KfDcEIA6QmaondnQsF4=" alt=""></li>
+            <li><img src="https://media.istockphoto.com/id/503227300/photo/strong-lion.webp?b=1&s=170667a&w=0&k=20&c=ex4XFbb_wneSadkvoCEYi0CnY58cSZBoEYaodHCDhoE=" alt=""></li>
+            <li><img src="https://media.istockphoto.com/id/533297303/photo/lion-mother-with-cub.webp?b=1&s=170667a&w=0&k=20&c=-ZNNodIyHlNrgLxvLV4d6HYsqKaSM6OzpY5ATLv-Kw8=" alt=""></li>
+            <li><img src="https://media.istockphoto.com/id/1354939778/photo/close-up-of-a-roaring-lion.webp?b=1&s=170667a&w=0&k=20&c=PjMIACJvvlHXsqOEbF9nVwP5KfDcEIA6QmaondnQsF4=" alt=""></li>
+            <li><a href="https://google.com" id="ggg">google.com</a></li>
+        </ul>
+    </div>
+</body>
+<script>
+
+    // this method gives us less feature that's why we use addeventlistner 
+    // document.getElementById("firstlion").onclick=function(){
+    //     alert("lion click")
+    // }
+
+
+    // attachEevent this use for internet explorer
+    // Jquerry on
+
+
+    
+    // event propogation
+
+    // there two context of event propogation event bubling and event capturing
+    // document.getElementById('images').addEventListener('click',function(e){
+    //     console.log("click inside the ul");
+    // },false) // here we wright 3rd para meter but it default false;
+    
+    // document.getElementById('firstlion').addEventListener('click',function(e){
+      
+    //     e.stopPropagation()
+    //     console.log("lion clicked");
+    // },false)
+    //type mouse keyboard,timestamp, defaultprevent 
+    //target ,toElement ,srcEelemrnt,curreent target 
+    //x
+    //altkey,ctrlkey shiftket ,keycode
+
+
+//     document.getElementById('ggg').addEventListener("click",function(e){
+//    e.preventDefault();
+//    e.stopPropagation()
+//    console.log("google.click");
+//     })
+
+// document.getElementById('images').addEventListener('click',function(e){
+//     console.log(e.target.parentNode);
+//     if(e.target.tagName=='IMG'){
+//         console.log(e.target.id);
+//         let removeit=e.target.parentNode;
+//         removeit.remove();
+//     }     
+//     },false)
+
+</script>
+</html>

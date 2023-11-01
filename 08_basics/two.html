@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>chai and code</h1>
+    <button id="stop">Stop</button>
+</body>
+<script>
+//  this is a function excecute
+// const saymukesh=function(){
+//         console.log("mukesh");
+//     }
+//     setTimeout(saymukesh(),2000)
+
+// this is handler
+    const saymukesh=function(){
+        console.log("mukesh");
+    }
+ const changeTExt=function(){
+    document.querySelector("h1").innerHTML="i am the best"
+ }
+ const changeme=setTimeout(changeTExt,2000)
+ 
+ document.querySelector("#stop").addEventListener('click',function(){
+    clearTimeout(changeme)
+    console.log("stoped");
+ })
+</script>
+</html>

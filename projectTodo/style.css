@@ -1,0 +1,35 @@
+.todo-container{
+    max-width: 762px;
+    border: 1px solid #000;
+    margin: 0px auto;
+    height: 100vh;
+}
+.heading_tag{
+    color: blue;
+    text-align: center;
+}
+.input_container{
+    display: flex;
+    justify-content: space-between;
+    max-width: 300px;
+    margin: 0 auto;
+}
+.input-fld{
+    padding: 20px;
+    border: 1px solid gray;
+}
+#add_btn{
+    padding: 5px 10px;
+    background-color: #000;
+    color: aliceblue;
+}
+.data_con{
+    display: flex;
+    justify-content: space-between;
+    width: 50%;
+    margin: 0 auto;
+    margin-top: 20px;
+}
+.remove_allblock{
+    display: none;
+}
