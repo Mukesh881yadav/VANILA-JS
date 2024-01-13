@@ -1,0 +1,35 @@
+.registartion_title{
+    text-align: center;
+}
+
+.container form{
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+.container form i{
+    visibility: hidden;
+}
+.container form span{
+    visibility: hidden;
+}
+.container form .success span{
+    visibility: visible;
+}
+.inputval:focus{
+    border-color: gray;
+}
+.inputval.fail{
+    border: 1px solid red;
+}
+.inputval.success{
+    border: 1px solid green;
+}
+.erorr{
+    visibility: hidden;
+    color: red;
+}
+.erorr.geterorr{
+    visibility: visible;
+}
+
